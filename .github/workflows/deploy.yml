@@ -1,0 +1,24 @@
+name: Deploy
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  EC2-Deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name }}  # the branch name
+    steps:
+      - id: Deploy-Helm
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+        with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_SANDBOX }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SANDBOX }}
+            aws-region: us-west-2
+            cluster-name: eks-action-test
+            cluster-role-arn: ${{ secrets.AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}
+            chart-repository: oci://ghcr.io/
+            chart-path: nginxinc/charts/nginx-ingress
+            namespace: ingress
+            name: demo
+            version: 1.2.2
