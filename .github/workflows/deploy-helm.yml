@@ -14,8 +14,8 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_SANDBOX }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SANDBOX }}
             aws-region: us-east-1
-            cluster-name: bitovi-deploy-eks-action-tester-main-cluster                                         # created by the deploy-eks action
-            cluster-role-arn: arn:aws:iam::755521597925:role/bitovi-deploy-eks-action-tester-main-eks-cluster  # created by the deploy-eks action
+            cluster-name: bitovi-deploy-eks-action-tester-main-cluster           # created by the deploy-eks action
+            cluster-role-arn: ${{ secrets.AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}  
             chart-repository: oci://ghcr.io/
             chart-path: nginxinc/charts/nginx-ingress
             namespace: ingress
