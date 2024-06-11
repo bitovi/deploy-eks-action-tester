@@ -13,4 +13,4 @@ jobs:
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_SANDBOX }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SANDBOX }}
-        aws_eks_cluster_admin_role_arn: ${{ AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}
+        aws_eks_cluster_admin_role_arn: ${{ secrets.AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}
