@@ -1,10 +1,10 @@
-name: Deploy
+name: Helm Deploy
 on:
   push:
     branches: [ main ]
 
 jobs:
-  EC2-Deploy:
+  Helm-Deploy:
     runs-on: ubuntu-latest
     environment:
       name: ${{ github.ref_name }}  # the branch name

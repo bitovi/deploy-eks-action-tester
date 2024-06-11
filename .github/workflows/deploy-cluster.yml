@@ -1,4 +1,4 @@
-name: Basic deploy
+name: Cluster Deploy
 
 on:
     workflow_dispatch:
