@@ -1,0 +1,17 @@
+name: Basic deploy
+
+on:
+    workflow_dispatch:
+
+jobs:
+  Deploy-Cluster:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create EKS Cluster
+      uses: bitovi/github-actions-deploy-eks@v0.1.0
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_eks_cluster_admin_role_arn: arn:aws:iam::123456789012:role/AWSReservedSSO_AdministratorAccess_1234567890123456
+        aws_additional_tags: { "createdBy": "maxc" }

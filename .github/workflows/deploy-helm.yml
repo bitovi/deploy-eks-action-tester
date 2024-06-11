@@ -16,7 +16,7 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SANDBOX }}
             aws-region: us-west-2
             cluster-name: eks-action-test
-            cluster-role-arn: ${{ secrets.AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}
+            # cluster-role-arn: ${{ secrets.AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}
             chart-repository: oci://ghcr.io/
             chart-path: nginxinc/charts/nginx-ingress
             namespace: ingress
