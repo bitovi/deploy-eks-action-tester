@@ -11,6 +11,6 @@ jobs:
     - name: Create EKS Cluster
       uses: bitovi/github-actions-deploy-eks@v0.1.0
       with:
-        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws_eks_cluster_admin_role_arn: arn:aws:iam::123456789012:role/AWSReservedSSO_AdministratorAccess_1234567890123456
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_SANDBOX }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SANDBOX }}
+        aws_eks_cluster_admin_role_arn: ${{ AWS_ROLES_ARN_SERVICE_EKS_SANDBOX }}
